@@ -1,88 +1,88 @@
 # 🛒 SupermarketManagement
 
-Un proyecto Java moderno que demuestra el poder de la **programación funcional** para gestionar productos de supermercado usando Streams API.
+A modern Java project that demonstrates the power of **functional programming** for managing supermarket products using Streams API.
 
-## 📝 Descripción
+## 📝 Description
 
-Este proyecto nació como trabajo práctico integrador del curso de **Programación Funcional en Java** de TodoCode Academy. Implementa un sistema de gestión de productos de supermercado aplicando conceptos avanzados de programación funcional como transformaciones de colecciones, agregaciones y funciones de orden superior.
+This project was born as an integrative practical work for the **Functional Programming in Java** course at TodoCode Academy. It implements a supermarket product management system applying advanced functional programming concepts such as collection transformations, aggregations, and higher-order functions.
 
-## ✨ Funcionalidades Implementadas
+## ✨ Implemented Features
 
-El proyecto incluye las siguientes operaciones funcionales sobre una colección de productos:
+The project includes the following functional operations on a product collection:
 
-### 🔍 **1. Filtrado por Categoría**
+### 🔍 **1. Category Filtering**
 
-- Filtra productos por categoría específica (ej: "Fruits")
-- Utiliza `filter()` y `equals()` para búsquedas exactas
+- Filters products by specific category (e.g., "Fruits")
+- Uses `filter()` and `equals()` for exact searches
 
-### 💰 **2. Cálculo de Totales**
+### 💰 **2. Total Calculation**
 
-- Calcula el precio total de productos por categoría
-- Combina `filter()`, `mapToDouble()` y `sum()`
+- Calculates total price of products by category
+- Combines `filter()`, `mapToDouble()`, and `sum()`
 
-### 🎯 **3. Búsqueda de Mínimos**
+### 🎯 **3. Minimum Search**
 
-- Encuentra el producto con el menor precio
-- Usa `min()` con `Comparator.comparingDouble()`
-- Implementa manejo seguro con `ifPresentOrElse()`
+- Finds the product with the lowest price
+- Uses `min()` with `Comparator.comparingDouble()`
+- Implements safe handling with `ifPresentOrElse()`
 
-### 📊 **4. Agrupación por Categoría**
+### 📊 **4. Category Grouping**
 
-- Agrupa productos usando `Collectors.groupingBy()`
-- Genera un `Map<String, List<Product>>` organizado por categoría
+- Groups products using `Collectors.groupingBy()`
+- Generates a `Map<String, List<Product>>` organized by category
 
-### 📈 **5. Análisis de Promedios**
+### 📈 **5. Average Analysis**
 
-- Calcula el precio promedio por categoría
-- Identifica la categoría con mayor precio promedio
-- Utiliza `parallelStream()` para optimización
-- Combina `Collectors.averagingDouble()` con `max()`
+- Calculates average price per category
+- Identifies the category with the highest average price
+- Uses `parallelStream()` for optimization
+- Combines `Collectors.averagingDouble()` with `max()`
 
-## 🏗️ Estructura del Proyecto
+## 🏗️ Project Structure
 
 ```
 src/
 ├── main/java/org/example/
-│   ├── Main.java              # Clase principal con todas las demostraciones
+│   ├── Main.java              # Main class with all demonstrations
 │   └── logica/
-│       └── Product.java       # Modelo de datos del producto
+│       └── Product.java       # Product data model
 ```
 
-## 🗃️ Dataset de Ejemplo
+## 🗃️ Sample Dataset
 
-El proyecto incluye un dataset diverso con 21 productos distribuidos en 5 categorías:
+The project includes a diverse dataset with 21 products distributed across 5 categories:
 
 - **🍎 Fruits**: Apple, Banana, Orange, Strawberry
 - **🥬 Vegetables**: Carrot, Broccoli, Lettuce, Potato
-- **🥩 Meat**: Chicken, Beef, Pork, Turkey (6 productos)
+- **🥩 Meat**: Chicken, Beef, Pork, Turkey (6 products)
 - **🌾 Grocery**: Flour, Rice, Pasta, Sugar
 - **🥛 Dairy**: Milk, Cheese, Yogurt
 
-## 🚀 Cómo Compilar y Ejecutar
+## 🚀 How to Compile and Run
 
-### Requisitos
+### Requirements
 
-- **Java 11+** (recomendado JDK 17)
+- **Java 11+** (JDK 17 recommended)
 - **Maven 3.6+**
 
-### Compilación
+### Compilation
 
 ```bash
 mvn clean package
 ```
 
-### Ejecución
+### Execution
 
 ```bash
-# Ejecutar desde target/classes
+# Run from target/classes
 java -cp target/classes org.example.Main
 ```
 
-**Alternativamente**, desde IntelliJ IDEA: ejecutar la clase `org.example.Main` con la configuración de ejecución.
+**Alternatively**, from IntelliJ IDEA: run the `org.example.Main` class with the run configuration.
 
-## 📊 Ejemplo de Salida
+## 📊 Sample Output
 
-Al ejecutar el programa, verás:
+When running the program, you'll see:
 
 ```
 Products in category 'Fruits':
@@ -102,37 +102,37 @@ The price by category is: {Meat=5.67, Dairy=1.87, Fruits=0.85, Grocery=0.95, Veg
 The category with the highest average price is: Meat
 ```
 
-## 🛠️ Conceptos de Programación Funcional Aplicados
+## 🛠️ Applied Functional Programming Concepts
 
-- **Stream API**: Para procesamiento declarativo de colecciones
-- **Filter**: Filtrado basado en predicados
-- **Map**: Transformación de elementos
-- **Reduce**: Agregación de valores (sum, min, max)
-- **Collectors**: Agrupación y cálculos estadísticos
+- **Stream API**: For declarative collection processing
+- **Filter**: Predicate-based filtering
+- **Map**: Element transformation
+- **Reduce**: Value aggregation (sum, min, max)
+- **Collectors**: Grouping and statistical calculations
 - **Method References**: `Product::getPrice`, `Product::getCategory`
-- **Optional**: Manejo seguro de valores nulos
-- **Parallel Streams**: Optimización con `parallelStream()`
+- **Optional**: Safe null value handling
+- **Parallel Streams**: Optimization with `parallelStream()`
 
-## 🎯 Características Destacadas
+## 🎯 Key Features
 
-- ✅ **Inmutabilidad**: Lista de productos inmutable con `List.of()`
-- ✅ **Funciones Puras**: Métodos sin efectos secundarios
-- ✅ **Composición Funcional**: Encadenamiento de operaciones stream
-- ✅ **Manejo de Errores**: Uso de `Optional` y `ifPresentOrElse()`
-- ✅ **Performance**: Implementación con streams paralelos donde es beneficioso
+- ✅ **Immutability**: Immutable product list with `List.of()`
+- ✅ **Pure Functions**: Methods without side effects
+- ✅ **Functional Composition**: Stream operation chaining
+- ✅ **Error Handling**: Use of `Optional` and `ifPresentOrElse()`
+- ✅ **Performance**: Implementation with parallel streams where beneficial
 
-## 💡 Aprendizajes Clave
+## 💡 Key Learnings
 
-Este proyecto demuestra cómo la programación funcional en Java puede hacer el código:
+This project demonstrates how functional programming in Java can make code:
 
-- Más **legible** y **expresivo**
-- Menos **propenso a errores**
-- Más **fácil de mantener** y **testear**
-- Optimizado para **procesamiento paralelo**
+- More **readable** and **expressive**
+- Less **error-prone**
+- Easier to **maintain** and **test**
+- Optimized for **parallel processing**
 
-## 📞 Contacto
+## 📞 Contact
 
-Proyecto educativo desarrollado como parte del curso de TodoCode Academy.
+Educational project developed as part of the TodoCode Academy course.
 
 **Camila Villalba Heuer**
 
