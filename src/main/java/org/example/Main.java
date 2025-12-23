@@ -71,7 +71,7 @@ public class Main {
                 .collect(Collectors.groupingBy(Product::getCategory));
         System.out.println(prodByCategory);
 
-        //5) Calcular el precio promedio de cada categoria y mostrar la categoria con el promedio mas alto.
+        //5) Calculate the average price of each category and display the category with the highest average.
         System.out.println("\nCategory with the highest average price:");
         Map<String, Double> avgPriceByCategory = products.parallelStream()
                 .collect(Collectors.groupingBy(Product::getCategory, Collectors.averagingDouble(p-> p.getPrice())
