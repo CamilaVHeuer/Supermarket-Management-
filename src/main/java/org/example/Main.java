@@ -74,7 +74,7 @@ public class Main {
         //5) Calculate the average price of each category and display the category with the highest average.
         System.out.println("\nCategory with the highest average price:");
         Map<String, Double> avgPriceByCategory = products.parallelStream()
-                .collect(Collectors.groupingBy(Product::getCategory, Collectors.averagingDouble(p-> p.getPrice())
+                .collect(Collectors.groupingBy(Product::getCategory, Collectors.averagingDouble(Product::getPrice)
                 ));
         System.out.println("The price by category is: " + avgPriceByCategory);
         String expensiveCategory = avgPriceByCategory.entrySet().parallelStream()
